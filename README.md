@@ -1,4 +1,4 @@
-#Adminer
+# Adminer
 
 - Cree una carpeta Adminer
 - Cree  el documento.yml
@@ -22,7 +22,7 @@ services:
 - Luego lo abri en el navegador
 - El interior del yml lo saque de aqui https://hub.docker.com/_/adminer
 
-#Apache
+# Apache
 
 - Cree una carpeta Apache
 - Elimine todos los contenedores e imagenes que ya tenia porque daba error
@@ -42,7 +42,7 @@ services:
 - Utilece el comando docker compose up -d en el terminal
 - Luego lo abri en el navegador
 
-#Guestbook
+# Guestbook
 
 - Cree una carpeta Guestbook
 - Cree  el documento.yml
@@ -63,14 +63,13 @@ services:
 - Luego lo abri en el navegador
 - El interior del yml lo saque de aqui https://josedom24.github.io/curso_docker_2022/sesion4/guestbook.html
 
-#Mediawiki
+# Mediawiki
 
 - Cree una carpeta Mediawiki
 - Cree  el documento.yml
-# MediaWiki with MariaDB
-#
-# Access via "http://localhost:8080"
-#   (or "http://$(docker-machine ip):8080" if using docker-machine)
+#MediaWiki with MariaDB
+#Access via "http://localhost:8080"
+#(or "http://$(docker-machine ip):8080" if using docker-machine)
 version: '3'
 services:
   mediawiki:
@@ -83,11 +82,11 @@ services:
     volumes:
       - images:/var/www/html/images
       - ./LocalSettings.php:/var/www/html/LocalSettings.php
-      # After initial setup, download LocalSettings.php to the same directory as
-      # this yaml and uncomment the following line and use compose to restart
-      # the mediawiki service
+      #After initial setup, download LocalSettings.php to the same directory as
+      #this yaml and uncomment the following line and use compose to restart
+      #the mediawiki service
          
-  # This key also defines the name of the database host used during setup instead of the default "localhost"
+  #This key also defines the name of the database host used during setup instead of the default "localhost"
   database:
     image: mariadb
     restart: always
@@ -115,7 +114,7 @@ volumes:
 - Volvia abrir el navegador
 - El interior del yml lo saque de aqui https://hub.docker.com/_/mediawiki
 
-#Wordpress
+# Wordpress
 
 - Cree una carpeta Wordpress
 - Cree  el documento.yml
