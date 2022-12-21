@@ -34,9 +34,9 @@ services:
   apache:
     image: httpd:latest
     ports:
-    - '8080:80'
+     '8080:80'
     volumes:
-    - ./:/var/www/html
+     ./:/var/www/html
 
 - Desde el terminal fui a la carpeta Apache
 - El interior del yml lo saque de aqui https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Simple-Apache-docker-compose-example-with-Dockers-   httpd-image
@@ -55,7 +55,7 @@ services:
     image: iesgn/guestbook
     restart: always
     ports:
-      - 80:5000
+       80:5000
   db:
     container_name: redis
     image: redis
@@ -78,12 +78,12 @@ services:
     image: mediawiki
     restart: always
     ports:
-      - 8080:80
+       8080:80
     links:
-      - database
+       database
     volumes:
-      - images:/var/www/html/images
-      - ./LocalSettings.php:/var/www/html/LocalSettings.php
+       images:/var/www/html/images
+       ./LocalSettings.php:/var/www/html/LocalSettings.php
       #After initial setup, download LocalSettings.php to the same directory as
       #this yaml and uncomment the following line and use compose to restart
       #the mediawiki service
@@ -93,13 +93,13 @@ services:
     image: mariadb
     restart: always
     environment:
-      # @see https://phabricator.wikimedia.org/source/mediawiki/browse/master/includes/DefaultSettings.php
+      #@see https://phabricator.wikimedia.org/source/mediawiki/browse/master/includes/DefaultSettings.php
       MYSQL_DATABASE: my_wiki
       MYSQL_USER: wikiuser
       MYSQL_PASSWORD: example
       MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
     volumes:
-      - db:/var/lib/mysql
+       db:/var/lib/mysql
 
 volumes:
   images:
@@ -128,14 +128,14 @@ services:
     image: wordpress
     restart: always
     ports:
-      - 8080:80
+       8080:80
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: exampleuser
       WORDPRESS_DB_PASSWORD: examplepass
       WORDPRESS_DB_NAME: exampledb
     volumes:
-      - wordpress:/var/www/html
+       wordpress:/var/www/html
 
   db:
     image: mysql:5.7
@@ -146,7 +146,7 @@ services:
       MYSQL_PASSWORD: examplepass
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
-      - db:/var/lib/mysql
+       db:/var/lib/mysql
 
 volumes:
   wordpress:
